@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% static 'static_jquery/js/jquery.js' %}
+
+{% block title %}Contact Form{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span6">
+            <h1>Send an email</h1>
+            {% crispy form form.helper %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block extrajs %}
+<script src="{% static 'static_jquery/js/jquery.min.js' %}"></script>
+<script type="text/javascript">
+$(function() {
+    $('#id_name').focus()
+});
+</script>
+{% endblock %}
+{% block pic %}/media/u.png{% endblock %}
